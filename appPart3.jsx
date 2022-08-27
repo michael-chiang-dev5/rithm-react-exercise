@@ -1,21 +1,4 @@
-class Person extends React.Component {
-    render() {
-        let age = this.props.age;
-        let name = this.props.name;
-        if (name.length>4) name=name.slice(0,4)
-        let hobbies = this.props.hobbies
-        return (
-            <div>
-            <p>Learn some more information about this person</p>
-            {name}
-            {age >= 21 ? (<h3>have a drink</h3>) : (<h3>you must be 21 to drink</h3>)}
-            <ul>
-                {hobbies.map((e)=><li>{e}</li>)}
-            </ul>
-            </div>
-        );
-    }
-}
+
 
 class Name extends React.Component {
     render() {
@@ -69,7 +52,7 @@ class Hobbies2 extends React.Component {
     }
 }
 
-class App extends React.Component {
+class Person extends React.Component {
     render() {
         let name = this.props.name;
         let age = this.props.age;
@@ -87,6 +70,16 @@ class App extends React.Component {
     }
 }
 
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <Person age='20' name='michael' hobbies={['tennis','running','reading']}/>
+                <Person age='22' name='beth' hobbies={['coding','math']}/>
+                <Person age='21' name='charlie' hobbies={['sleeping','yawning']}/>                
+            </div>
+        )
+    }
+}
 
-//ReactDOM.render(<div>test</div>, document.getElementById('person'))
-ReactDOM.render(<App age='20' name='michael' hobbies={['tennis','running','reading']}/>, document.getElementById("person"));
+ReactDOM.render(<App />, document.getElementById("people"));
