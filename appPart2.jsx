@@ -1,7 +1,7 @@
 class Tweet extends React.Component {
     render() {
         return (
-            <div>{this.props.username} - {this.props.name} - {this.props.date}- {this.props.message}</div>
+            <div className = 'tweet'>{this.props.username} - {this.props.name} - {this.props.date}- {this.props.message}</div>
         );
     }
 }
